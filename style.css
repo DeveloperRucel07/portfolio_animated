@@ -189,11 +189,18 @@ main {
   transition: all 0.4s ease-in-out;
   animation: bounce 2s ease-in-out 4s infinite;
 }
+.hero-btn button a {
+  text-decoration: none;
+  color: #000;
+}
 .hero-btn button:hover {
   transform: translateY(-10px);
   background-color: mediumseagreen;
   color: white;
-  box-shadow: 0px 0 10px rgba(231, 76, 60, 0.8), -1px 0 20px rgba(231, 76, 60, 0.6), -4px 0 30px rgba(231, 76, 60, 0.4);
+  box-shadow: 0px 0 10px rgba(8, 187, 157, 0.644), -1px 0 20px rgba(238, 27, 3, 0.925), -4px 0 30px rgba(127, 8, 138, 0.74);
+}
+.hero-btn a:hover {
+  color: white;
 }
 
 .about {
@@ -452,6 +459,9 @@ main {
   outline: none;
   border: none;
   border-radius: 10px;
+}
+.get-touch form button:hover {
+  background-color: mediumseagreen;
 }
 
 .message {

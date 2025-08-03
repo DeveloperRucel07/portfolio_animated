@@ -215,20 +215,25 @@ main{
         padding: 20px 45px;
         border-radius: 20px;
         border: unset;
-        // box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         transition: all 0.4s ease-in-out;
         @include bounce;
+        a{
+            text-decoration: none;
+            color: $backgroundColor;
+        }
     }
 
     button:hover{
         transform: translateY(-10px);
         background-color: mediumseagreen;
         color: $whiteColor;
-        // box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         box-shadow: 
-           -0px 0 10px rgba(231, 76, 60, 0.8),
-            -1px 0 20px rgba(231, 76, 60, 0.6),
-            -4px 0 30px rgba(231, 76, 60, 0.4);
+           -0px 0 10px rgba(8, 187, 157, 0.644),
+            -1px 0 20px rgba(238, 27, 3, 0.925),
+            -4px 0 30px rgba(127, 8, 138, 0.74);
+        }
+        a:hover{
+            color: $whiteColor;
         }
 
 }
@@ -470,6 +475,9 @@ main{
             outline: none;
             border: none;
             border-radius: 10px;
+        }
+        button:hover{
+            background-color: mediumseagreen;
         }
     }
 }
