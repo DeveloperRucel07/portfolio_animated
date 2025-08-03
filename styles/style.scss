@@ -2,6 +2,20 @@ $backgroundColor: #000;
 $textColor: grey;
 $whiteColor: white;
 $maxWidth: 1920px;
+$errorColor: red;
+
+.trail {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: fadeOut 0.5s linear forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.5); }
+}
 
 @mixin displayFlexContain{
     display: flex;
@@ -83,8 +97,22 @@ main{
     display:none;
 }
 
+.d-flex{
+    display: flex;
+}
+
 .active{
     display: block !important;
+}
+
+.error-text{
+    color: $errorColor;
+}
+
+.error{
+    font-size: 18px;
+    outline: red;
+    border: 2px solid red;
 }
 
 .burger{
@@ -95,7 +123,6 @@ main{
         width: 50px;
         height: 50px;
     }
-
 }
 
 .logo{
@@ -188,8 +215,8 @@ main{
         padding: 20px 45px;
         border-radius: 20px;
         border: unset;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        // box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: all 0.4s ease-in-out;
         @include bounce;
     }
 
@@ -197,9 +224,12 @@ main{
         transform: translateY(-10px);
         background-color: mediumseagreen;
         color: $whiteColor;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        
-    }
+        // box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 
+           -0px 0 10px rgba(231, 76, 60, 0.8),
+            -1px 0 20px rgba(231, 76, 60, 0.6),
+            -4px 0 30px rgba(231, 76, 60, 0.4);
+        }
 
 }
 
@@ -311,6 +341,7 @@ main{
     height: 100%;
     h3{
         @include marginPc;
+        font-weight: 700;
         font-size: 30px;
     }
     button{
@@ -324,6 +355,7 @@ main{
     button:hover{
         background-color: $textColor;
         color: $whiteColor;
+        box-shadow: 0 0 20px 10px rgba(54, 53, 54, 0.9);
     }
 }
 
@@ -440,6 +472,27 @@ main{
             border-radius: 10px;
         }
     }
+}
+
+.message{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(133, 95, 172, 0.603);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.message-contain{
+    background-color: $whiteColor;
+    margin: 0 20px;
+    color: $backgroundColor;
+    padding: 30px 40px;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 20px;
 }
 
 footer{

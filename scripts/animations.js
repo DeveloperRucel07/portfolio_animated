@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const cards = document.querySelectorAll('.project-card');
 
+  const cards = document.querySelectorAll('.project-card');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -71,32 +71,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, { threshold: 0.2 });
-
   observer.observe(document.querySelector('.projects'));
-
-
 });
 
 let cards = document.querySelectorAll('.project-card');
+
 
 cards.forEach(card =>{
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;  
-
+      const y = e.clientY - rect.top;
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       const rotateX = ((y - centerY) / centerY) * 15;
       const rotateY = ((x - centerX) / centerX) * 15;
-
-      card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`;
     });
-
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'rotateX(0) rotateY(0) scale(1)';
     });
 })
+
+const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6', '#e67e22'];
+
+document.addEventListener('mousemove', (e) => {
+  const trail = document.createElement('div');
+  trail.className = 'trail';
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  trail.style.background = color;
+  const size = Math.random() * 10 + 5; 
+  trail.style.width = `${size}px`;
+  trail.style.height = `${size}px`;
+  trail.style.left = `${e.clientX}px`;
+  trail.style.top = `${e.clientY}px`;
+  document.body.appendChild(trail);
+  setTimeout(() => {
+    trail.remove();
+  }, 500);
+});
+
 
 
 

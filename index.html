@@ -135,14 +135,20 @@
                     </div>
                 </div>
                 <form class="fade-left">
-                    <input type="text" placeholder="Your Name" />
-                    <input type="email" placeholder="Your Email" />
-                    <textarea placeholder="Your Message"></textarea>
-                    <button>Send</button>
+                    <p class="error-text hide" id="form-error">Please fill out the form correctly</p>
+                    <input type="text" placeholder="Your Name" id="name"/>
+                    <input type="email" placeholder="Your Email" id="email"/>
+                    <textarea placeholder="Your Message" id="message"></textarea>
+                    <button id="button-submit">Send</button>
                 </form>
             </div>    
         </section>
     </main>
+    <div id="message-success" class="message hide">
+        <div class="message-contain">
+            Your message has been sent successfully. Thank you for reaching out to me.
+        </div>
+    </div>
     <footer>
 
     </footer>
