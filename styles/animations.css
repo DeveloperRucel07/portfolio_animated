@@ -45,6 +45,20 @@
 }
 
 
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out
+}
+
+/* When visible */
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 
 
 @media (max-width: 850px) {
