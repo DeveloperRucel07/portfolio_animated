@@ -1,62 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const animatedElementsTop = document.querySelectorAll(".fade-top");
-  const animatedElementLeft = document.querySelectorAll(".fade-left");
-  const animatedElementRight = document.querySelectorAll(".fade-right");
+let burger = document.getElementById('burger');
+let burgerClose = document.getElementById('burgerclose');
+let items = document.querySelector('.items');
 
-
-  const observerLeft = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("slide-left");
-        observer.unobserve(entry.target); 
-      }
-    });
-  }, { threshold: 0.2 });
-
-  const observerRight = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("slide-right");
-        observer.unobserve(entry.target); 
-      }
-    });
-  }, { threshold: 0.1 });
-
-
-  animatedElementsTop.forEach((el) => observerLeft.observe(el));
-  animatedElementLeft.forEach((el) => observerRight.observe(el));
-  animatedElementRight.forEach((el) => observerRight.observe(el));
-
-
-  animatedElementsTop.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
-      el.classList.add("slide-left");
-      observerLeft.unobserve(el);
+burger.addEventListener('click', function(){
+    const items = document.querySelector('.items');
+    if(items.classList.contains('menu')){
+        burger.innerHTML =`<img src="./img/close.png" alt="">`
+        items.classList.remove('menu');
+    }else{
+        burger.innerHTML =`<img src="./img/open.png" alt="">`
+        items.classList.add('menu');
     }
-  });
-
-
-  animatedElementLeft.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
-      el.classList.add("slide-right");
-      observerRight.unobserve(el);
-    }
-  });
-
-
-  animatedElementRight.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
-      el.classList.add("slide-right");
-      observerRight.unobserve(el);
-    }
-  });
-
-
-});
-
+    
+})
