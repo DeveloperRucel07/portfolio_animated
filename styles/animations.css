@@ -1,0 +1,45 @@
+.fade-top {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 0.7s ease-in-out;
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-1000px);
+  transition: all 1s ease-in-out 0.3s;
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(500px);
+  transition: all 1s ease-in-out 0.5s;
+}
+
+.fade-top.slide-left{
+    opacity: 1;
+  transform: translateX(0);
+}
+.fade-left.slide-left {
+    opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-top.slide-right {
+  transform: translateX(100px);
+}
+.fade-left.slide-right {
+    opacity: 1;
+  transform: translateX(0);
+}
+.fade-right.slide-right {
+    opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-top.scale {
+  transform: scale(0.8);
+}
+.fade-left.scale {
+  transform: scale(1);
+}

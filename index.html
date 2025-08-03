@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Animated</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/animations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -30,26 +31,26 @@
     
     <main>
         <section class="hero">
-            <div class="hero-text">
+            <div class="hero-text fade-top">
                 <h2>Developer Rucel</h2>
                 <h1 class="hero-title">Frontend Developer</h1>
                 <p>I implement user interface design and solve user probolems with HTML, CSS, and JavaScript.
                     I have a passion for creating user-friendly and visually appealing web applications.
                     I have have experience of making products that solve user problems and implement responsive website.
                 </p>
-                <div class="hero-btn">
+                <div class="hero-btn fade-right">
                     <button class="hero-btn">Contact Me</button>
                 </div>
             </div>
             <div class="hero-img">
-                <img src="./img/developer.jpg" alt="About Me" class="about-img" />
+                <img class="fade-left" src="./img/developer.jpg" alt="About Me" class="about-img" />
             </div>
         </section>
 
         <section class="about" id="about">
             <h2>Get to know me</h2>
             <div class="about-contain">
-                <div class="about-text">
+                <div class="about-text fade-top">
                     <p>
                         I implement user interface design and solve user probolems with HTML, CSS, and JavaScript.
                         I have a passion for creating user-friendly and visually appealing web applications.
@@ -61,12 +62,12 @@
                         I have a passion for creating user-friendly and visually appealing web applications.
                         I have have experience of making products that solve user problems and implement responsive website.
                     </p>
-                    <div class="hero-btn">
+                    <div class="hero-btn fade-left">
                         <button class="hero-btn">Contact Me</button>
                     </div>  
                 </div>
                 <div class="about-img">
-                    <img src="./img/developer.jpg" alt="About Me" class="about-img" />
+                    <img class="fade-right" src="./img/developer.jpg" alt="About Me" class="about-img" />
                 </div>
             </div>
         </section>
@@ -130,7 +131,7 @@
                         <a href="https://www.instagram.com/your-instagram-profile/" target="_blank">IG</a>
                     </div>
                 </div>
-                <form>
+                <form class="fade-left">
                     <input type="text" placeholder="Your Name" />
                     <input type="email" placeholder="Your Email" />
                     <textarea placeholder="Your Message"></textarea>
