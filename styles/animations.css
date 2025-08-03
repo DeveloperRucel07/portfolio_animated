@@ -43,3 +43,18 @@
 .fade-left.scale {
   transform: scale(1);
 }
+
+
+@media (max-width: 850px) {
+  .fade-left {
+    opacity: 0;
+    transform: translateY(-400px);
+    transition: all 1s ease-in-out 0.3s;
+  }
+  .fade-right {
+    opacity: 0;
+    transform: translateX(300px);
+    transition: all 1s ease-in-out 0.5s;
+  }
+  
+}
