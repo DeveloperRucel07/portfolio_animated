@@ -111,8 +111,8 @@ main{
 
 .error{
     font-size: 18px;
-    outline: red;
-    border: 2px solid red;
+    outline: red !important;
+    border: 2px solid red !important;
 }
 
 .burger{
@@ -761,7 +761,6 @@ footer{
             width: 100%;
         }
         .about-img{
-            display: none;
             width: 100%;
         }
     }
@@ -785,6 +784,14 @@ footer{
 
 
 }
+
+@media (max-width:450px) {
+    .hero{
+        flex-direction: column-reverse;
+    }
+    
+}
+
 
 
 

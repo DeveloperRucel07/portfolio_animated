@@ -28,13 +28,49 @@ form.addEventListener('submit', function(event) {
     const name = nameRef.value.trim();
     const email = emailRef.value.trim();
     const message = messageRef.value.trim();
-    if(name == '' || email == '' || message == '') {
+    if(!renderError()) {
+        renderError();
         showErrorMessage();
     }else{
+        const data = {
+            name: name,
+            email: email,
+            message: message
+            }
+        console.log(data);
         showSucessMessage();
         removeValue();
     }
 });
+
+function renderError() {
+    let hasError = false;
+    if (!nameRef.value.trim()) {
+        nameRef.classList.add('error');
+        hasError = true;
+    }
+
+    if (!emailRef.value.trim()) {
+        emailRef.classList.add('error');
+        hasError = true;
+    }
+
+    if (!messageRef.value.trim()) {
+        messageRef.classList.add('error');
+        hasError = true;
+    }
+    removeError();
+    return !hasError;
+}
+
+
+function  removeError(){
+    setTimeout(()=>{
+       nameRef.classList.remove('error');
+        emailRef.classList.remove('error');
+        messageRef.classList.remove('error'); 
+    }, 2000);
+}
 
 
 function showErrorMessage(){
