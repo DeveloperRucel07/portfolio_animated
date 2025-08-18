@@ -37,7 +37,6 @@ form.addEventListener('submit', function(event) {
             email: email,
             message: message
             }
-        console.log(data);
         showSucessMessage();
         removeValue();
     }
